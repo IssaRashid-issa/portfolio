@@ -1,0 +1,189 @@
+/* style.css */
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --dark: #0f172a;
+  --darker: #020617;
+  --light: #f8fafc;
+  --gray: #94a3b8;
+  --glass: rgba(15, 23, 42, 0.7);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --section-padding: clamp(5rem, 10vh, 8rem) 5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+  padding-top: 80px;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-item:hover {
+  color: var(--light);
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  padding: var(--section-padding);
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--light);
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+#about-me p {
+  max-width: 800px;
+}
+
+/* Education Section */
+.education-item {
+  margin-bottom: 2rem;
+}
+
+/* Interests Section */
+#Interests ul {
+  list-style: none;
+}
+
+#Interests li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+#Interests li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+/* Projects Section */
+.project-link {
+  display: inline-block;
+  margin: 1rem 0;
+  color: var(--secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Contact Form */
+form {
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: var(--light);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  section {
+    padding: 4rem 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+}
